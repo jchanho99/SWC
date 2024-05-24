@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: light;" class="">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Logo Search and Filter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+     
+        .header {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0px 2px 4px rgba(255, 255, 255, 0.1);
+        }   
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .sidebar {
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 150%;
+            background-color: #ffffff;
+            padding: 20px;
+            border-right: 1.5px solid #c5c5c5; /* 경계선 추가 */
+        }
+        .menu-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        .menu-item:hover {
+            background-color: #DDEEC9;
+        }
+        .menu-item a {
+            color: rgb(0, 0, 0);
+            display: block;
+        }
+
+        .category-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .category-list li {
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .logo-item {
+            width: 150px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><img src="https://postfiles.pstatic.net/MjAyNDA1MjNfMTMg/MDAxNzE2NDY3NTg0Njg4.dITfyrTtjESYxqDv2BQ43sJuTXc-Q-VaCQcDGx8qxe4g.nV6CR4dmyaqCxS_o9UTIOBY0aCjPrFG-2b1ug6IbhTMg.PNG/%EB%AF%B8%EB%8F%84_%EB%A1%9C%EA%B3%A0.png?type=w773" alt=" "></h1>
+        <hr>
+    </div>
+
+    <div class="container">
+        <aside class="sidebar">
+            <ul class="category-list">
+                <li class="menu-item"><a href="#">All</a></li>
+                <li class="menu-item"><a href="#">선사/고대관</a></li>
+                <li class="menu-item"><a href="#">중/근세관</a></li>
+                <li class="menu-item"><a href="#">서화관</a></li>
+                <li class="menu-item"><a href="#">기증관</a></li>
+                <li class="menu-item"><a href="#">사유의 방</a></li>
+                <li class="menu-item"><a href="#">조각/공예관</a></li>
+                <li class="menu-item"><a href="#">세계문화관</a></li>
+                <li class="menu-item"><a href="#">역사의 길</a></li>
+                <li class="menu-item"><a href="#">야외 전시</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <input type="text" id="search-input" placeholder="Search logos...">
+            <div class="logo-grid">
+                <!-- Example logo items -->
+                <div class="logo-item" data-category="선사/고대관">
+                    <img src="https://postfiles.pstatic.net/MjAyNDA1MjRfMTg0/MDAxNzE2NTI4OTc1MjA0.2vf7Vaw1glVWwYyUkYkAO4B81AomIWOrITEPo5_T23Yg.T0ZvTzQi7CCXVYU1wmolVQ6qySFKkBEas4ixBhlUYhYg.PNG/IMG_9814.PNG?type=w773" alt="Logo">
+                    <p>씨름 </p>
+                    <img src="https://postfiles.pstatic.net/MjAyNDA1MjRfMTg0/MDAxNzE2NTI4OTc0NTA1.Yd0And2SqLylv3LEK7-1P9s4ruKktmTO4wC-wgZqVlog.qm6ifirCeSvsKI7i-SwyejNB9cEvBHtq94Xe3UesdM0g.PNG/IMG_9821.PNG?type=w773" alt="Logo">
+                    <p>고종 어진 </p>
+                </div>
+                <div class="logo-item" data-category="중/근세관">
+                    <img src="https://postfiles.pstatic.net/MjAyNDA1MjRfMTg0/MDAxNzE2NTI4OTc1MjA0.2vf7Vaw1glVWwYyUkYkAO4B81AomIWOrITEPo5_T23Yg.T0ZvTzQi7CCXVYU1wmolVQ6qySFKkBEas4ixBhlUYhYg.PNG/IMG_9814.PNG?type=w773" alt="Logo">
+                    <p>씨름  </p>
+                    <img src="https://postfiles.pstatic.net/MjAyNDA1MjRfMTg0/MDAxNzE2NTI4OTc0NTA1.Yd0And2SqLylv3LEK7-1P9s4ruKktmTO4wC-wgZqVlog.qm6ifirCeSvsKI7i-SwyejNB9cEvBHtq94Xe3UesdM0g.PNG/IMG_9821.PNG?type=w773" alt="Logo">
+                    <p>고종 어진  </p>
+                    <img src="https://postfiles.pstatic.net/MjAyNDA1MjRfMjk1/MDAxNzE2NTI4OTc0Nzc1.EEY5pdVLD_FbFtKdqegiAe9r6-KZYr_ANXq1Mx9_wYEg.sQpse5U-BhnQNo7Y4sUMtipsjHqLZ3g5F9U0X9dfE8og.PNG/IMG_9820.PNG?type=w773" alt="Logo">
+                    <p>백자 달항아리 </p>
+                    <img src="https://postfiles.pstatic.net/MjAyNDA1MjRfODIg/MDAxNzE2NTI4OTc1MjU3.1U91zIPeJ84b5mpNNvDRHsmQLfA1QgX9FZ2-AGMLJUwg.cE38PJs-aQJ48jMXMma5MA4NARozNHBa4QInru74gm4g.PNG/IMG_9825.PNG?type=w773" alt="Logo">
+                    <p>홍길동전 </p>
+                    <img src="https://postfiles.pstatic.net/MjAyNDA1MjRfMjYg/MDAxNzE2NTI4OTc0Njkw.B0wT8GhQhpmsUj-C1-q0ZzZjLssglkznDIvULv4apFAg.rVXmonX283Dgiy1C1AblXS8XiOCANjkKIvFtJkBXHdkg.PNG/IMG_9826.PNG?type=w773" alt="Logo">
+                    <p>목민심서 </p>
+                </div>
+                <!-- Add more logo items as needed -->
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('search-input');
+            const logoItems = document.querySelectorAll('.logo-item');
+            const categoryList = document.querySelectorAll('.category-list li');
+
+            // Search functionality
+            searchInput.addEventListener('input', () => {
+                const searchTerm = searchInput.value.toLowerCase();
+                logoItems.forEach(item => {
+                    const logoName = item.querySelector('p').textContent.toLowerCase();
+                    if (logoName.includes(searchTerm)) {
+                        item.style.display = '';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+
+            // Category filter functionality
+            categoryList.forEach(category => {
+                category.addEventListener('click', () => {
+                    const selectedCategory = category.textContent.toLowerCase();
+                    logoItems.forEach(item => {
+                        const logoCategory = item.dataset.category.toLowerCase();
+                        if (selectedCategory === 'all' || logoCategory.includes(selectedCategory)) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
