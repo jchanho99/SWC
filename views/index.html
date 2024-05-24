@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지 예제</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+        .icon-container {
+            display: flex;
+            justify-content: space-around;
+            width: 50%;
+        }
+        .icon {
+            width: 230px;
+            height: 240px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .icon img {
+            width: 70%;
+            height: 70%;
+        }
+        #header {
+            margin: 20px 0;
+            font-size: 2em;
+        }
+        #footer {
+            margin: 20px 0;
+        }
+        ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .side-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #DDEEC9;
+            color: white;
+            padding: 20px;
+            transition: transform .5s;
+            transform: translateX(-180px); /* 사이드바를 왼쪽으로 숨김 */
+            border-right: 1px solid #DDEEC9; /* 경계선 추가 */
+        }
+        .side-bar:hover {
+            transform: translateX(0); /* 마우스 호버 시 사이드바 표시 */
+        }
+        .menu-item {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #ffffff;
+            border-radius: 5px;
+        }
+        .menu-item:hover {
+            background-color: #abd180;
+        }
+        .menu-item a {
+            color: rgb(0, 0, 0);
+            display: block;
+        }
+        .content {
+            margin-left: 175px;
+            padding: 20px;
+        }
+    </style>
+    <script>
+        function changeLanguage() {
+            var language = document.getElementById('language').value;
+            var explanation = document.getElementById('explanation');
+            var question = document.getElementById('question');
+            
+            if (language === 'english') {
+                explanation.innerText = 'Explanation';
+                question.innerText = 'Question';
+            } else if (language === 'korean') {
+                explanation.innerText = '설명';
+                question.innerText = '질문';
+            } else if (language === 'Chinese') {
+                explanation.innerText = '解释';
+                question.innerText = '问题';
+            } else if (language === 'Japanese') {
+                explanation.innerText = '説明';
+                question.innerText = '質問';
+            }
+        }
+
+        function changeFontSize() {
+            var fontSize = document.getElementById('word_size').value;
+            var explanation = document.getElementById('explanation');
+            var question = document.getElementById('question');
+
+            explanation.style.fontSize = fontSize + 'px';
+            question.style.fontSize = fontSize + 'px';
+        }
+    </script>
+</head>
+<body>
+    <div id="header">
+        <span><img src="/images/index/meedo.png" alt=" "></a></span>
+    </div>
+    <div id="container">
+        <div class="icon-container">
+            <div class="icon">
+                <img src="/images/index/pic.png" alt=" "></a>
+                <h2 id="explanation">설명</h2>
+            </div>
+            <div class="icon">
+                <img src="/images/index/question.png" alt=" "></a>
+                <h2 id="question">질문</h2>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <img src="/images/index/copyright.png" alt=" ">
+
+    </div>
+    <div class="side-bar">
+        <div class="menu-item"><a href="#"><label for='language'>언어 </label>
+            <select id='language' onchange="changeLanguage()">
+                <option value="korean" selected>한국어</option>
+                <option value="english">English</option>
+                <option value="Chinese">汉文</option>
+                <option value="Japanese">日语</option>
+            </select>
+        </div>
+        <div class="menu-item"><a href="#"><label for='word_size'>글자크기 </label>
+            <select id='word_size' onchange="changeFontSize()">
+                <option value="25">30px</option>
+                <option value="50">70px</option>
+            </select>
+        </div>
+    </div>
+</body>
+</html>
