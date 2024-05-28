@@ -9,11 +9,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/select_explanation', function(req, res, next) {
-  res.sendFile(path.join(__dirname, '..', 'views', 'select.html'));
+  res.sendFile(path.join(__dirname, '..', 'views', 'explanation.html'));
 });
 
 router.get('/select_question', function(req, res, next) {
-  res.sendFile(path.join(__dirname, '..', 'views', 'select.html'));
+  res.sendFile(path.join(__dirname, '..', 'views', 'question.html'));
+});
+
+router.get('/chat_page', function(req, res, next) {
+  res.sendFile(path.join(__dirname, '..', 'views', 'chat.html'));
 });
 
 module.exports = router;
