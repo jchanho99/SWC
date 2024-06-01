@@ -32,7 +32,7 @@ router.post('/ask', async (req, res) => {
     console.log("사람 질문:", message)
     try {
       const response = await openai.chat.completions.create({
-      model: 'gpt-3.5-turbo',
+      model: 'ft:gpt-3.5-turbo-0125:personal::9UpIdgir',
       messages: [{ role: 'user', content: message }],
       });
   
