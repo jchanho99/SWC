@@ -22,6 +22,10 @@ router.get('/chat', function(req, res, next) {
   res.sendFile(path.join(__dirname, '..', 'views', 'chat.html'));
 });
 
+router.get('/chat2', function(req, res, next) {
+  res.sendFile(path.join(__dirname, '..', 'views', 'chat2.html'));
+});
+
 router.post('/ask', async (req, res) => {
     const message = req.body.prompt;
     if (!message) {
