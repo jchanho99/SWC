@@ -5,7 +5,40 @@
     <meta name="viewport" content="width=device-width">
     <title>Meedo: select</title>
     <link rel="stylesheet" href="/stylesheets/explanation.css" type="text/css" />
+    <link rel="stylesheet" href="/stylesheets/popup.css" type="text/css" />
     <script src="/javascripts/select_sort.js"></script>
+    <script>
+        //팝업 띄우기
+        function openPop() {
+        document.getElementById("popup_layer").style.display = "block";
+        }
+
+        //팝업 닫기
+        function closePop() {
+        document.getElementById("popup_layer").style.display = "none";
+        }
+
+        //생성
+        async function sendMessage() {
+            const chatBox = document.getElementById('popup_cont');
+            const queryname = document.getElementById;
+            const response = await fetch('/ask', {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ prompt: queryname+"을 설명해줘." }),
+            });
+            const data = await response.json();
+
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('message', 'bot-message');
+            botMessage.innerHTML = `<p>"${data.response}"</p>`;
+            chatBox.appendChild(botMessage);
+
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+    </script>
 </head>
 <body>
     <div class="header">
@@ -33,7 +66,7 @@
             <div class="logo-grid" id="logo-grid">
                 <!-- Example logo items -->
                 <div class="logo-item" data-category="선사/고대관">
-                    <a href="/chat2">
+                    <a href="javascript:sendMessage('농경문 청동기');">
                         <img src="/images/relics/농경문 청동기.jpg" alt="농경문 청동기" class="image">
                         <p>농경문 청동기</p>
                     </a>
@@ -280,6 +313,23 @@
                 </div>
             </div>
         </main>
+    </div>
+    <div class="popup_layer" id="popup_layer" style="display: none;">
+        <div class="popup_box">
+            <div style="height: 10px; width: 375px; float: top;">
+              <a href="javascript:closePop();"><img src="/images/index/ic_close.svg" class="m_header-banner-close" width="30px" height="30px"></a>
+            </div>
+            <!--팝업 컨텐츠 영역-->
+            <div class="popup_cont" id="popup_cont">
+                <h5 id="explanation_name"></h5>
+
+      
+            </div>
+            <!--팝업 버튼 영역-->
+            <div class="popup_btn" style="float: bottom; margin-top: 200px;">
+                <a href="javascript:closePop();">닫기</a>
+            </div>
+        </div>
     </div>
 </body>
 </html>

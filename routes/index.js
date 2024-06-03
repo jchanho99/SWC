@@ -21,9 +21,8 @@ router.get('/select_explanation', function(req, res, next) {
 router.get('/chat', function(req, res, next) {
   res.sendFile(path.join(__dirname, '..', 'views', 'chat.html'));
 });
-
 router.get('/chat2', function(req, res, next) {
-  res.sendFile(path.join(__dirname, '..', 'views', 'chat2.html'));
+  
 });
 
 router.post('/ask', async (req, res) => {
@@ -36,7 +35,7 @@ router.post('/ask', async (req, res) => {
     console.log("사람 질문:", message)
     try {
       const response = await openai.chat.completions.create({
-      model: 'ft:gpt-3.5-turbo-0125:personal::9UpIdgir',
+      model: 'ft:gpt-3.5-turbo-0125:personal::9W5Lnn3C',
       messages: [{ role: 'user', content: message }],
       });
   

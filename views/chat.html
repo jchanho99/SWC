@@ -20,13 +20,16 @@
         </div>
     </div>
     <div class="sidebar-right" id="sidebar-right">
-        <button class="exit-button" onclick="window.close()">나가기</button>
-        
-
+        <button class="exit-button" onclick="window.close()">나가기</button>        
+        <button class="explanation-button" id="explanation-button">작품 리스트로 이동하기</button>
         <!-- Right Sidebar Content -->
     </div>
 
     <script>
+        document.getElementById("explanation-button").onclick = function () {
+            location.href = "/select_explanation";
+        };
+
         function toggleSidebar() {
             const sidebarRight = document.getElementById('sidebar-right');
             sidebarRight.style.transform = sidebarRight.style.transform === 'translateX(0%)' ? 'translateX(100%)' : 'translateX(0%)';

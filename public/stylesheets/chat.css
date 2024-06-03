@@ -112,3 +112,14 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+.explanation-button {
+    display: block;
+    text-align: center;
+    width: 100px;
+    padding: 10px;
+    background-color: greenyellow;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
