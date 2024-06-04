@@ -18,7 +18,8 @@
         //팝업 닫기
         function closePop() {
         document.getElementById("popup_layer").style.display = "none";
-        }
+        document.getElementById("popup_cont").innerHTML = '<p id="explanation_name"></p>';
+	}
 
         //생성
         async function sendMessage(name) {
