@@ -9,8 +9,10 @@
     <script src="/javascripts/select_sort.js"></script>
     <script>
         //팝업 띄우기
-        function openPop() {
+        function openPop(name) {
         document.getElementById("popup_layer").style.display = "block";
+        document.getElementById("explanation_name").innerText = name;
+        sendMessage(name);
         }
 
         //팝업 닫기
@@ -19,9 +21,10 @@
         }
 
         //생성
-        async function sendMessage() {
+        async function sendMessage(name) {
             const chatBox = document.getElementById('popup_cont');
-            const queryname = document.getElementById;
+            const popup_name = document.getElementById('explanation_name');
+            const queryname = name;
             const response = await fetch('/ask', {
                 method: "POST",
                 headers: {
@@ -36,7 +39,7 @@
             botMessage.innerHTML = `<p>"${data.response}"</p>`;
             chatBox.appendChild(botMessage);
 
-            chatBox.scrollTop = chatBox.scrollHeight;
+            
         }
     </script>
 </head>
@@ -66,247 +69,247 @@
             <div class="logo-grid" id="logo-grid">
                 <!-- Example logo items -->
                 <div class="logo-item" data-category="선사/고대관">
-                    <a href="javascript:sendMessage('농경문 청동기');">
+                    <a href="javascript:openPop('농경문 청동기');">
                         <img src="/images/relics/농경문 청동기.jpg" alt="농경문 청동기" class="image">
                         <p>농경문 청동기</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="선사/고대관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('호우총 청동그릇');">
                         <img src="/images/relics/호우총 청동그릇.jpg" alt="호우총 청동그릇" class="image">
                         <p>호우총 청동그릇</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('씨름');">
                         <img src="/images/relics/씨름.jpg" alt="씨름" class="image">
                         <p>씨름</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('백자 달항아리');">
                         <img src="/images/relics/달 항아리.jpg" alt="백자 달항아리" class="image">
                         <p>백자 달항아리</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('고종 어진');">
                         <img src="/images/relics/고종 어진.jpg" alt="고종 어진" class="image">
                         <p>고종 어진</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('경국대전');">
                         <img src="/images/relics/경국대전.jpg" alt="경국대전" class="image">
                         <p>경국대전</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('고종 가상존호 옥보');">
                         <img src="/images/relics/고종 가상존호 옥보.jpg" alt="고종 가상존호 옥보" class="image">
                         <p>고종 가상존호 옥보</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('고종황제 필 학우등사');">
                         <img src="/images/relics/고종황제 필 학우등사.jpg" alt="고종황제 필 학우등사" class="image">
                         <p>고종황제 필 학우등사</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('동국대지도');">
                         <img src="/images/relics/동국대지도.jpg" alt="동국대지도" class="image">
                         <p>동국대지도</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('구운몽');">
                         <img src="/images/relics/구운몽.jpg" alt="구운몽" class="image">
                         <p>구운몽</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('홍길동전');">
                         <img src="/images/relics/홍길동전.jpg" alt="홍길동전" class="image">
                         <p>홍길동전</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('심청전');">
                         <img src="/images/relics/심청전.jpg" alt="심청전" class="image">
                         <p>심청전</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('목민심서');">
                         <img src="/images/relics/목민심서.jpg" alt="목민심서" class="image">
                         <p>목민심서</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('성학집요');">
                         <img src="/images/relics/성학집요.jpg" alt="성학집요" class="image">
                         <p>성학집요</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('오륜행실도');">
                         <img src="/images/relics/오륜행실도.jpg" alt="오륜행실도" class="image">
                         <p>오륜행실도</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('화성성역의궤');">
                         <img src="/images/relics/화성성역의궤.jpg" alt="화성성역의궤" class="image">
                         <p>화성성역의궤</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('흠흠신서');">
                         <img src="/images/relics/흠흠신서.jpg" alt="흠흠신서" class="image">
                         <p>흠흠신서</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="중/근세관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('감지금니대방광불화엄경');">
                         <img src="/images/relics/감지금니대방광불화엄경 보현행원품.jpg" alt="감지금니대방광불화엄경 보현행원품" class="image">
                         <p>감지금니대방광불화엄경</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="조각공예관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('분청사기 납작병');">
                         <img src="/images/relics/분청사기 상감 파도 용무늬 매병.jpg" alt="분청사기 납작병" class="image">
                         <p>분청사기 납작병</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="조각공예관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('천흥사 종');">
                         <img src="/images/relics/천흥사 종.jpg" alt="천흥사 종" class="image">
                         <p>천흥사 종</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="조각공예관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('목조아미타불좌상');">
                         <img src="/images/relics/목조아미타불좌상.jpg" alt="목조아미타불좌상" class="image">
                         <p>목조아미타불좌상</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="조각공예관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('금강령');">
                         <img src="/images/relics/금강령.jpg" alt="금강령" class="image">
                         <p>금강령</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="조각공예관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('백자 청화 포도 원숭의 무늬 항아리');">
                         <img src="/images/relics/백자 청화 포도 원숭의 무늬 항아리.jpg" alt="백자 청화 포도 원숭의 무늬 항아리" class="image">
                         <p>백자 청화 포도 원숭의 무늬 항아리</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="조각공예관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('백자 청화 구름 용 무늬 항아리');">
                         <img src="/images/relics/백자 청화 구름 용 무늬 항아리.jpg" alt="백자 청화 구름 용 무늬 항아리" class="image">
                         <p>백자 청화 구름 용 무늬 항아리</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="조각공예관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('백자 청화 봉황 무늬 항아리');">
                         <img src="/images/relics/백자 청화 봉황 무늬 항아리.jpg" alt="백자 청화 봉황 무늬 항아리" class="image">
                         <p>백자 청화 봉황 무늬 항아리</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="서화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('삼천사 대지국사 비 조각');">
                         <img src="/images/relics/삼천사 대지국사 비 조각.jpg" alt="대지국사 비 조각" class="image">
                         <p>삼천사 대지국사 비 조각</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="서화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('진공대사탑 및 석관');">
                         <img src="/images/relics/원주 흥법사지 진공대사탑 및 석관.jpg" alt="진공대사탑 및 석관" class="image">
                         <p>진공대사탑 및 석관</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="서화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('산행길');">
                         <img src="/images/relics/산행길.jpg" alt="산행길" class="image">
                         <p>산행길</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="서화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('송시열 초상');">
                         <img src="/images/relics/송시열 초상.jpg" alt="송시열 초상" class="image">
                         <p>송시열 초상</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="서화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('어미개와 강아지');">
                         <img src="/images/relics/어미개와 강아지.jpg" alt="어미개와 강아지" class="image">
                         <p>어미개와 강아지</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="서화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('지장보살');">
                         <img src="/images/relics/지장보살.jpg" alt="지장보살" class="image">
                         <p>지장보살</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="서화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('참새와 고양이');">
                         <img src="/images/relics/참새와 고양이.jpg" alt="참새와 고양이" class="image">
                         <p>참새와 고양이</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="서화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('춤추는 아이');">
                         <img src="/images/relics/춤추는 아이.jpg" alt="춤추는 아이" class="image">
                         <p>춤추는 아이</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="사유의 방">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('금동 반가 사유상');">
                         <img src="/images/relics/금동 반가 사유상.jpg" alt="금동 반가 사유상" class="image">
                         <p>금동 반가 사유상</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="기증관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('명성황후 옥보');">
                         <img src="/images/relics/고종비 명성황후 추상 존호 옥보.jpg" alt="명성황후 옥보" class="image">
                         <p>명성황후 옥보</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="세계문화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('여러 색으로 엮은 도세구소쿠 갑옷');">
                         <img src="/images/relics/여러 색 끈으로 엮은 도서구소쿠 갑옷.jpg" alt="여러 색으로 엮은 도세구소쿠 갑옷" class="image">
                         <p>여러 색으로 엮은 도세구소쿠 갑옷</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="세계문화관">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('여인');">
                         <img src="/images/relics/여인.jpg" alt="여인" class="image">
                         <p>여인</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="야외전시">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('보신각 종');">
                         <img src="/images/relics/보신각 종.jpg" alt="보신각 종" class="image">
                         <p>보신각 종</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="원주 영전사 터 보제존자탑">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('원주 영전사 터 보제존자탑');">
                         <img src="/images/relics/원주 영전사 터 보제존자탑.jpg" alt="원주 영전사 터 보제존자탑" class="image">
                         <p>원주 영전사 터 보제존자탑</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="역사의 길">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('경천사십층석탑');">
                         <img src="/images/relics/개성 경천사 터 십층석탑.jpg" alt="경천사십층석탑" class="image">
                         <p>경천사십층석탑</p>
                     </a>
                 </div>
                 <div class="logo-item" data-category="역사의 길">
-                    <a href="/chat2">
+                    <a href="javascript:openPop('석탑 기단부 면돌');">
                         <img src="/images/relics/석탑 기단부 면돌.jpg" alt="석탑 기단부 면돌" class="image">
                         <p>석탑 기단부 면돌</p>
                     </a>
@@ -321,8 +324,8 @@
             </div>
             <!--팝업 컨텐츠 영역-->
             <div class="popup_cont" id="popup_cont">
-                <h5 id="explanation_name"></h5>
-
+                <h1 id="explanation_name"></h1>
+                <br>
       
             </div>
             <!--팝업 버튼 영역-->

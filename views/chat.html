@@ -38,7 +38,7 @@
         async function sendMessage() {
             const userInput = document.getElementById('user-input').value;
             if (userInput.trim() === "") return;
-
+            console.log(userInput);
             const chatBox = document.getElementById('chat-box');
             const userMessage = document.createElement('div');
             userMessage.classList.add('message', 'user-message');
